@@ -49,26 +49,39 @@ gun对象 在player对象附近,用以指示player发射子弹的方向
 
 void delay_ms(unsigned int milliseconds) 
 {
+
 	clock_t start_time = clock(); // 获取当前时钟时间
+ 
 	while (clock() < start_time + milliseconds); // 等待指定的毫秒数
+ 
 }
 
 void delay_fps(unsigned int fps) 
 {
+
 	unsigned int frame_time = 1000 / fps; // 计算每帧的时间间隔（毫秒）
+ 
 	delay_ms(frame_time); // 调用延迟函数
+ 
 }
 
 (4)游戏主循环中的各类接触情况的判断，核心由以下函数计算
 
 bool IfTouch(int x, int y, int W, int H, int _x, int _y, int _R) 
 {
+
 	if (_x<x - _R || _x>x + W + _R || _y<y - _R || _y>y + H + _R) 
+ 
  	{
+  
 		return 0;
+  
 	}
+ 
 	else
+ 
 		return 1;
+  
 }
 
 (5)游戏主循环中对于player的运动操控,会出现由于每次循环中计算时间不一出现的卡顿解决方法使用bool isUp;等bool类型的变量来控制移动，对于键盘按键的按下和弹起分别修改对应bool变量的真假。
