@@ -25,6 +25,12 @@
 
 四.	收获	
 
+文件资源提取
+
+链接：https://pan.baidu.com/s/11qWrSgkYbCIgJviBNrAsDg?pwd=457x 
+
+提取码：457x
+
 
 一. 	作业题目
 基于C++及easyx的简单平面射击游戏
